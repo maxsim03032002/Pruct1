@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">  <!--подключаем шаблонизатор-->
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор</title>
+</head>
+<body>
+<h1>Калькулятор Get</h1>
+    <form action="/" method="get">
+        <input type="number" name="a" th:value="${a}" title="Введите первое число"><br>  <!-- обращаемся к методу шаблонизатора, без него вся конструкция работать не будет-->
+        <label>Выберите операцию</label>
+        <select name="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+        </select><br>
+        <input type="number" name="b" th:value="${b}" title="Введите второе число"><br>
+        <button type="submit">Посчитать</button>
+        <h2>Ответ: </h2>
+        <p th:text="${answer}"></p>  <!-- вывод ответа -->
+    </form>
+
+<h1>Калькулятор Post</h1>
+    <form action="/" method="post">
+        <input type="number" name="c" th:value="${c}" title="Введите первое число"><br>
+        <label>Выберите операцию</label>
+        <select name="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+        </select><br>
+        <input type="number" name="d" th:value="${d}" title="Введите второе число"><br>
+        <button type="submit">Посчитать</button>
+        <h2>Ответ: </h2>
+        <p th:text="${answerPost}"></p>  <!-- вывод ответа -->
+    </form>
+</body>
+</html>
